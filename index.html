@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLACKLINE BARBER | Sharp Cuts. Clean Style.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0a0a0a',
+                        cardBg: '#141414',
+                        goldAccent: '#d4af37',
+                        goldHover: '#e5c158',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Montserrat', sans-serif; }
+    </style>
+</head>
+<body class="bg-darkBg text-white antialiased selection:bg-goldAccent selection:text-black">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-extrabold tracking-wider uppercase text-white">
+                BLACK<span class="text-goldAccent">LINE</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-goldAccent transition">Home</a>
+                <a href="#about" class="hover:text-goldAccent transition">About</a>
+                <a href="#services" class="hover:text-goldAccent transition">Services</a>
+                <a href="#gallery" class="hover:text-goldAccent transition">Gallery</a>
+                <a href="#barbers" class="hover:text-goldAccent transition">Barbers</a>
+                <a href="#reviews" class="hover:text-goldAccent transition">Reviews</a>
+                <a href="#location" class="hover:text-goldAccent transition">Location</a>
+                <a href="#booking" class="bg-goldAccent text-black px-5 py-2.5 rounded-full font-bold hover:bg-goldHover transition shadow-lg shadow-goldAccent/20">Book Now</a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-zinc-800 px-4 pt-4 pb-6 space-y-4">
+            <a href="#home" class="block text-base font-medium hover:text-goldAccent transition">Home</a>
+            <a href="#about" class="block text-base font-medium hover:text-goldAccent transition">About</a>
+            <a href="#services" class="block text-base font-medium hover:text-goldAccent transition">Services</a>
+            <a href="#gallery" class="block text-base font-medium hover:text-goldAccent transition">Gallery</a>
+            <a href="#barbers" class="block text-base font-medium hover:text-goldAccent transition">Barbers</a>
+            <a href="#reviews" class="block text-base font-medium hover:text-goldAccent transition">Reviews</a>
+            <a href="#location" class="block text-base font-medium hover:text-goldAccent transition">Location</a>
+            <a href="#booking" class="block text-center bg-goldAccent text-black px-5 py-3 rounded-full font-bold hover:bg-goldHover transition">Book Now</a>
+        </div>
+    </header>
+
+    <!-- 1. Home / Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=1920" alt="Hero Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-darkBg via-darkBg/80 to-darkBg/60"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center z-10 space-y-6">
+            <span class="text-goldAccent uppercase tracking-[0.3em] text-sm font-semibold">Welcome to Blackline</span>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight uppercase">
+                Sharp Cuts. <span class="text-goldAccent">Clean Style.</span>
+            </h1>
+            <p class="text-zinc-300 text-lg sm:text-xl max-w-2xl mx-auto font-light">
+                Experience precision grooming, classic cuts, and modern styling tailored specifically for the modern gentleman.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#booking" class="w-full sm:w-auto bg-goldAccent text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-goldHover transition shadow-xl shadow-goldAccent/20">
+                    Book Appointment
+                </a>
+                <a href="#services" class="w-full sm:w-auto border border-zinc-700 hover:border-goldAccent px-8 py-4 rounded-full font-bold text-lg transition">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-goldAccent text-sm font-bold uppercase tracking-widest">About Our Studio</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">Crafting Confidence, One Cut at a Time.</h2>
+                <p class="text-zinc-400 leading-relaxed font-light">
+                    At BLACKLINE BARBER, we combine traditional barbering techniques with modern styling trends. Our team of experienced master barbers is dedicated to delivering pristine fades, sharp beard line-ups, and an unmatched grooming experience in a premium atmosphere.
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-4 border-t border-zinc-800">
+                    <div>
+                        <h3 class="text-3xl font-black text-goldAccent">10+</h3>
+                        <p class="text-zinc-400 text-sm">Years Experience</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-black text-goldAccent">5K+</h3>
+                        <p class="text-zinc-400 text-sm">Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-2 bg-goldAccent/20 rounded-2xl blur-lg"></div>
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800" alt="Barber working" class="relative rounded-2xl w-full object-cover h-[400px] border border-zinc-800">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section id="services" class="py-24 bg-cardBg/50 border-y border-zinc-800/60 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-goldAccent text-sm font-bold uppercase tracking-widest">What We Offer</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">Our Services & Pricing</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 hover:border-goldAccent/50 transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-goldAccent transition">Classic Haircut</h3>
+                        <span class="text-goldAccent font-extrabold text-lg">$30</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-6 font-light">Traditional scissor or clipper cut tailored to your face shape, finished with hot towel neck shave.</p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold"><i class="fa-regular fa-clock mr-1"></i> 30 mins</span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 hover:border-goldAccent/50 transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-goldAccent transition">Skin Fade</h3>
+                        <span class="text-goldAccent font-extrabold text-lg">$35</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-6 font-light">Ultra-smooth zero skin fade with pristine blending, foil shaver finish, and sharp styling.</p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold"><i class="fa-regular fa-clock mr-1"></i> 45 mins</span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 hover:border-goldAccent/50 transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-goldAccent transition">Beard Trim</h3>
+                        <span class="text-goldAccent font-extrabold text-lg">$25</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-6 font-light">Precision beard shaping, line-up with straight razor, conditioning beard oil, and hot towel treatment.</p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold"><i class="fa-regular fa-clock mr-1"></i> 30 mins</span>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 hover:border-goldAccent/50 transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-goldAccent transition">Hair + Beard Combo</h3>
+                        <span class="text-goldAccent font-extrabold text-lg">$55</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-6 font-light">The ultimate transformation package. Complete haircut of choice paired with full beard sculpting.</p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold"><i class="fa-regular fa-clock mr-1"></i> 60 mins</span>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 hover:border-goldAccent/50 transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-goldAccent transition">Kids Cut</h3>
+                        <span class="text-goldAccent font-extrabold text-lg">$20</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-6 font-light">Patient and professional styling for kids (under 12 years) with high attention to comfort.</p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold"><i class="fa-regular fa-clock mr-1"></i> 30 mins</span>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 hover:border-goldAccent/50 transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-goldAccent transition">Hot Towel Shave</h3>
+                        <span class="text-goldAccent font-extrabold text-lg">$30</span>
+                    </div>
+                    <p class="text-zinc-400 text-sm mb-6 font-light">Traditional straight razor head or face shave accompanied by soothing hot and cold towel wraps.</p>
+                    <span class="text-xs text-zinc-500 uppercase tracking-wider font-semibold"><i class="fa-regular fa-clock mr-1"></i> 40 mins</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Gallery Section -->
+    <section id="gallery" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <span class="text-goldAccent text-sm font-bold uppercase tracking-widest">Our Work</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">Style Gallery</h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="overflow-hidden rounded-xl border border-zinc-800 h-64 bg-zinc-900">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=600" alt="Haircut 1" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-zinc-800 h-64 bg-zinc-900">
+                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=600" alt="Haircut 2" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-zinc-800 h-64 bg-zinc-900">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="Haircut 3" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="overflow-hidden rounded-xl border border-zinc-800 h-64 bg-zinc-900">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=600" alt="Haircut 4" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Barbers Section -->
+    <section id="barbers" class="py-24 bg-cardBg/50 border-y border-zinc-800/60 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center space-y-4 mb-16">
+                <span class="text-goldAccent text-sm font-bold uppercase tracking-widest">Expert Team</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">Meet Our Barbers</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Barber 1 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-zinc-800 text-center group">
+                    <div class="h-80 overflow-hidden relative bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="Barber Alex" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold">Alex Vance</h3>
+                        <p class="text-goldAccent text-sm font-medium">Master Fade Specialist</p>
+                        <div class="flex justify-center space-x-4 pt-2 text-zinc-400">
+                            <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barber 2 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-zinc-800 text-center group">
+                    <div class="h-80 overflow-hidden relative bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" alt="Barber Marcus" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold">Marcus Sterling</h3>
+                        <p class="text-goldAccent text-sm font-medium">Beard Sculptor & Stylist</p>
+                        <div class="flex justify-center space-x-4 pt-2 text-zinc-400">
+                            <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Barber 3 -->
+                <div class="bg-cardBg rounded-2xl overflow-hidden border border-zinc-800 text-center group">
+                    <div class="h-80 overflow-hidden relative bg-zinc-900">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600" alt="Barber Liam" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-6 space-y-3">
+                        <h3 class="text-xl font-bold">Liam Thorne</h3>
+                        <p class="text-goldAccent text-sm font-medium">Classic Cut Expert</p>
+                        <div class="flex justify-center space-x-4 pt-2 text-zinc-400">
+                            <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Reviews Section -->
+    <section id="reviews" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center space-y-4 mb-16">
+            <span class="text-goldAccent text-sm font-bold uppercase tracking-widest">Testimonials</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">What Clients Say</h2>
+            <p class="text-zinc-500 text-xs italic">*Demo testimonials — clearly replaceable when used for a real client*</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 space-y-4">
+                <div class="text-goldAccent flex space-x-1 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300 text-sm font-light italic">"Best fade in town! Alex took his time and the attention to detail is remarkable. Definitely coming back."</p>
+                <div class="pt-4 border-t border-zinc-800">
+                    <h4 class="font-bold text-sm">Jason Miller</h4>
+                    <span class="text-xs text-zinc-500">Verified Client</span>
+                </div>
+            </div>
+
+            <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 space-y-4">
+                <div class="text-goldAccent flex space-x-1 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300 text-sm font-light italic">"Clean shop, great vibe, and Marcus gave me the sharpest beard trim I've ever had. Highly recommend."</p>
+                <div class="pt-4 border-t border-zinc-800">
+                    <h4 class="font-bold text-sm">David K.</h4>
+                    <span class="text-xs text-zinc-500">Verified Client</span>
+                </div>
+            </div>
+
+            <div class="bg-cardBg p-8 rounded-2xl border border-zinc-800 space-y-4">
+                <div class="text-goldAccent flex space-x-1 text-sm">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="text-zinc-300 text-sm font-light italic">"Super professional service. The booking process via WhatsApp was fast and seamless. 5/5 stars!"</p>
+                <div class="pt-4 border-t border-zinc-800">
+                    <h4 class="font-bold text-sm">Ryan Reynolds</h4>
+                    <span class="text-xs text-zinc-500">Verified Client</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Booking Section -->
+    <section id="booking" class="py-24 bg-cardBg/50 border-y border-zinc-800/60 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto bg-cardBg p-8 sm:p-12 rounded-3xl border border-zinc-800 shadow-2xl">
+            <div class="text-center space-y-3 mb-10">
+                <span class="text-goldAccent text-sm font-bold uppercase tracking-widest">Reserve Your Slot</span>
+                <h2 class="text-3xl font-extrabold uppercase">Book Appointment</h2>
+                <p class="text-zinc-400 text-sm">Fill in the details below to instantly generate your WhatsApp booking request.</p>
+            </div>
+
+            <form id="booking-form" class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Your Name</label>
+                        <input type="text" id="client-name" required placeholder="John Doe" class="w-full bg-darkBg border border-zinc-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-goldAccent transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Contact Number</label>
+                        <input type="tel" id="client-contact" required placeholder="+1 234 567 890" class="w-full bg-darkBg border border-zinc-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-goldAccent transition">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Select Service</label>
+                        <select id="client-service" class="w-full bg-darkBg border border-zinc-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-goldAccent transition">
+                            <option value="Classic Haircut ($30)">Classic Haircut - $30</option>
+                            <option value="Skin Fade ($35)">Skin Fade - $35</option>
+                            <option value="Beard Trim ($25)">Beard Trim - $25</option>
+                            <option value="Hair + Beard Combo ($55)">Hair + Beard Combo - $55</option>
+                            <option value="Kids Cut ($20)">Kids Cut - $20</option>
+                            <option value="Hot Towel Shave ($30)">Hot Towel Shave - $30</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Select Barber</label>
+                        <select id="client-barber" class="w-full bg-darkBg border border-zinc-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-goldAccent transition">
+                            <option value="Alex Vance">Alex Vance</option>
+                            <option value="Marcus Sterling">Marcus Sterling</option>
+                            <option value="Liam Thorne">Liam Thorne</option>
+                            <option value="Any Available">Any Available</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Date</label>
+                        <input type="date" id="client-date" required class="w-full bg-darkBg border border-zinc-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-goldAccent transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-zinc-400 mb-2">Time</label>
+                        <input type="time" id="client-time" required class="w-full bg-darkBg border border-zinc-700 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-goldAccent transition">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-[#25D366] text-black font-bold text-lg py-4 rounded-xl hover:bg-[#20ba5a] transition flex items-center justify-center space-x-3 shadow-lg shadow-[#25D366]/20">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Book via WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 8. Location Section -->
+    <section id="location" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-goldAccent text-sm font-bold uppercase tracking-widest">Find Us</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold uppercase">Visit Our Barbershop</h2>
+                <div class="space-y-4 text-zinc-300">
+                    <p class="flex items-start space-x-3">
+                        <i class="fa-solid fa-location-dot text-goldAccent mt-1"></i>
+                        <span>123 Gentleman Street, Downtown, Suite 4B, City</span>
+                    </p>
+                    <p class="flex items-center space-x-3">
+                        <i class="fa-solid fa-phone text-goldAccent"></i>
+                        <span>+1 (555) 382-9100</span>
+                    </p>
+                    <p class="flex items-start space-x-3">
+                        <i class="fa-solid fa-clock text-goldAccent mt-1"></i>
+                        <span>Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: 10:00 AM - 5:00 PM</span>
+                    </p>
+                </div>
+                <div class="pt-4">
+                    <a href="https://maps.google.com" target="_blank" class="inline-flex items-center space-x-2 bg-goldAccent text-black font-bold px-6 py-3 rounded-full hover:bg-goldHover transition">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <span>Open in Google Maps</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="h-[400px] rounded-2xl overflow-hidden border border-zinc-800">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537363153169!3d-37.81720974202131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d6a32f7a1f0!2sVictoria%20St%2C%20West%20Melbourne%20VIC%203003%2C%20Australia!5e0!3m2!1sen!2slk!4v1628000000000!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Footer Section -->
+    <footer class="bg-cardBg border-t border-zinc-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <a href="#" class="text-2xl font-extrabold tracking-wider uppercase text-white">
+                    BLACK<span class="text-goldAccent">LINE</span>
+                </a>
+                <p class="text-zinc-500 text-sm mt-1">Sharp Cuts. Clean Style.</p>
+            </div>
+            
+            <div class="flex space-x-6 text-xl text-zinc-400">
+                <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-goldAccent transition"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+            <div class="text-zinc-500 text-sm">
+                &copy; 2026 Blackline Barber. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and WhatsApp Booking Automation -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Booking Form Logic
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('client-name').value;
+            const contact = document.getElementById('client-contact').value;
+            const service = document.getElementById('client-service').value;
+            const barber = document.getElementById('client-barber').value;
+            const date = document.getElementById('client-date').value;
+            const time = document.getElementById('client-time').value;
+
+            const whatsappNumber = "15553829100"; 
+
+            const message = `*New Appointment Request - BLACKLINE BARBER*%0A%0A` +
+                            `*Name:* ${name}%0A` +
+                            `*Contact:* ${contact}%0A` +
+                            `*Service:* ${service}%0A` +
+                            `*Barber:* ${barber}%0A` +
+                            `*Date:* ${date}%0A` +
+                            `*Time:* ${time}`;
+
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
